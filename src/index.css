@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(14, 28, 43);
 }
 
 code {
@@ -12,9 +13,15 @@ code {
     monospace;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
 
 
 /* General */
+
+a{
+  color: white;
+  text-decoration: none;
+}
 
 .wrapper {
   width: 100%;
@@ -26,20 +33,42 @@ code {
 
 .main {
   width: 60%;
+  background-color: rgb(26, 65, 31);
+  border-radius: 30px;
+  padding: 30px;
+}
+
+
+.main h2 {
+  font-size: 22px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main p {
+  font-size: 16px;
+  color: white;
+  font-family: 'Merriweather', serif;
 }
 
 .header h1 {
   font-size: 42px;
+  color: white;
+  font-family: 'Merriweather', serif;
 }
 
 .list {
   background-color: rgb(187, 224, 187);
   padding: 10px;
   margin: 10px 0;
+  border-radius: 15px;
 }
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 15px;
   margin-top: 15px;
 }
@@ -50,12 +79,26 @@ code {
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  background-color: green;
+  background-color: rgb(57, 5, 78);
   color: white;
 }
 
 .navbar button:hover {
-  background-color: rgb(1, 92, 1);
+  background-color: rgb(95, 14, 128);
+}
+
+.listbutton {
+  padding: 4px 8px;
+  font-size: 14px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: rgb(57, 5, 78);
+  color: white;
+}
+
+.listbutton:hover {
+  background-color: rgb(95, 14, 128);
 }
 
 /* Spinner */
