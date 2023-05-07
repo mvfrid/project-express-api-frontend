@@ -7,7 +7,7 @@ import { Main } from 'components/Main'
 import { SingleItem } from 'components/SingleItem'
 
 export const App = () => {
-  const [selectedBookId, setSelectedBookId] = useState(null);
+  const [selectedBookId, setSelectedBookId] = useState();
 
   const handleBookClick = (bookId) => {
     setSelectedBookId(bookId);
@@ -22,10 +22,9 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Start />} />
           <Route path="/books" element={<Main endpoint="books" title="All book reviews" onBookClick={handleBookClick} />} />
-          <Route path="/books/top100" element={<Main endpoint="books/top100" title="Top 100 rated books" onBookClick={handleBookClick} />} />
-          <Route path="/books/nonenglishbooks" element={<Main endpoint="books/nonenglishbooks" title="All non-english books" onBookClick={handleBookClick} />} />
+          <Route path="/top100" element={<Main endpoint="top100" title="Top 100 rated books" onBookClick={handleBookClick} />} />
+          <Route path="/nonenglishbooks" element={<Main endpoint="nonenglishbooks" title="All non-english books" onBookClick={handleBookClick} />} />
           <Route path="/books/:id" element={<SingleItem id={selectedBookId} onBookClick={handleBookClick} />} />
-          {/* Other routes */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>

@@ -23,6 +23,10 @@ a{
   text-decoration: none;
 }
 
+.start {
+  font-weight: 900;
+}
+
 .wrapper {
   width: 100%;
   display: flex;
@@ -55,6 +59,7 @@ a{
   font-size: 42px;
   color: white;
   font-family: 'Merriweather', serif;
+  text-align: center;
 }
 
 .list {
@@ -62,6 +67,10 @@ a{
   padding: 10px;
   margin: 10px 0;
   border-radius: 15px;
+}
+
+ul {
+  padding-inline-start: 10px;
 }
 
 .navbar {
@@ -90,6 +99,7 @@ a{
 .listbutton {
   padding: 4px 8px;
   font-size: 14px;
+  margin: 10px;
   border: none;
   border-radius: 15px;
   cursor: pointer;

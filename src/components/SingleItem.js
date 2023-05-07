@@ -16,7 +16,6 @@ export const SingleItem = () => {
         setList(data.body.book);
         setLoading(false);
         console.log('data.body.book', data.body.book)
-        console.log('list', list)
       })
       .catch((error) => {
         console.error(error);
@@ -24,7 +23,10 @@ export const SingleItem = () => {
       });
   }, [id]);
 
-  console.log('list outside useffect', list)
+  useEffect(() => {
+    // Logging the list to see if it works
+    console.log('list updated:', list);
+  }, [list]);
 
   const navigate = useNavigate();
   const onClickGoBack = () => {
@@ -47,7 +49,7 @@ export const SingleItem = () => {
         <ul>ISBN code: {list.isbn}</ul>
         <ul>Language code: {list.language_code}</ul>
         <ul>Number of pages: {list.num_pages}</ul>
-        <button type="button" onClick={onClickGoBack}>Go back</button>
+        <button type="button" className="listbutton" onClick={onClickGoBack}>Go back</button>
       </div>
     </div>
   );

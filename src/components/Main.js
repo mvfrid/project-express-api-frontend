@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Spinner } from './Spinner';
@@ -7,14 +8,14 @@ export const Main = ({ endpoint, title, onBookClick }) => {
   const [id, setId] = useState();
   const [loading, setLoading] = useState(false)
 
-  console.log('endpoint:', endpoint, 'title:', title)
-
   useEffect(() => {
     setLoading(true);
     fetch(`https://project-express-api-amd2viobia-nw.a.run.app/${endpoint}`)
-      .then((res) => res.json())
+      .then((res) => (res.json()))
       .then((data) => {
         setList(data.body.books);
+        console.log(`https://project-express-api-amd2viobia-nw.a.run.app/${endpoint}`)
+        console.log('data.body.books inside fetch:', data.body.books);
         setTimeout(() => setLoading(false), 2000);
       })
       .catch((error) => {
@@ -22,6 +23,11 @@ export const Main = ({ endpoint, title, onBookClick }) => {
         setTimeout(() => setLoading(false), 600);
       });
   }, [endpoint]);
+
+  useEffect(() => {
+    // Logging the list to see if it works
+    console.log('list updated:', list);
+  }, [list]);
 
   const handleButtonClick = (bookId) => {
     setId(bookId);
